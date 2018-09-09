@@ -138,4 +138,43 @@ var prefix = "#";
                 message.channel.send("**" + men.username + " has been unmuted! 😀 **")
         }
     })
+
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "dark")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***Welcome To Dark. ***')
+.setThumbnail(member.avatarURL)
+  .setImage('https://pa1.narvii.com/6782/6a39e35882b236f29965c9070bad5ce51f1dd01f_hq.gif')
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
+});
+
+
+
+client.on('guildMemberAdd', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`عضو جديد`)
+    .setDescription(`اهلا بك في السيرفر`)
+    .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('GREEN')
+    .setFooter('Black Night System', 'https://cdn.discordapp.com/avatars/469862705273241630/5898dc71bb811771be4f9f58898fca95.jpg?size=128')
+
+var channel =member.guild.channels.find('name', 'dark')
+if (!channel) return;
+channel.send({embed : embed});
+});
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
