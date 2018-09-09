@@ -110,17 +110,8 @@ client.on("message", async message => {
         }
         });
 
-
-client.on("ready", () => {
-    let time = moment().format('MMMM Do YYYY, h:mm:ss a');
-  console.log('=--------------------------------------------------------------=');
-  console.log('   ~          - '+time+' -          ~')
-  console.log('=--------------------------------------------------------------='); 
-});
-
-bot.on("guildMemberAdd", member => {
-      const welcomer = bot.channels.get("447122598732759042");
-      //*let welcomer = member.guild.channels.find("name","welcome");
+client.on("guildMemberAdd", member => {
+      let welcomer = member.guild.channels.find("name","dark");
       if(!welcomer) return;
       if(welcomer) {
          moment.locale('ar-ly');
@@ -137,18 +128,7 @@ bot.on("guildMemberAdd", member => {
       var Canvas = require('canvas')
       var jimp = require('jimp')
       
-      const w = ['./img/w1.png',
-      './img/w2.png',
-      './img/w3.png',
-      './img/w4.png',
-      './img/w5.png',
-      './img/w6.png',
-      './img/w7.png',
-      './img/w8.png',
-      './img/w9.png',
-      './img/w10.png',
-      './img/w11.png',
-      './img/w12.png',];
+      const w = ['./img/w4.png'];
       
               let Image = Canvas.Image,
                   canvas = new Canvas(401, 202),
@@ -203,5 +183,6 @@ bot.on("guildMemberAdd", member => {
       
       }
       });
+
 
 client.login(process.env.BOT_TOKEN);
