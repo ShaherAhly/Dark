@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (message.content === '.') {
-        message.reply('**Welcome To Dark Server :cocktail:**')
+        message.channel.send('**Welcome To Dark Server :cocktail:**')
       }
 });
 
