@@ -169,7 +169,9 @@ if (!channel) return;
 channel.send({embed : embed});
 });
 
-
+client.on('guildMemberAdd', (member) => {
+member.addRole(member.guild.roles.find('name', '- Dark. 🖤'));
+});
 
 
 
