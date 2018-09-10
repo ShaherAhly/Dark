@@ -8,7 +8,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === '.') {
         message.reply('**Welcome To Dark Server :cocktail:**')
-');
+);
       }
 });
 
