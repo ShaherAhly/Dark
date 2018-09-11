@@ -162,7 +162,7 @@ client.on('guildMemberAdd', member => {
     .setDescription(`اهلا بك في السيرفر`)
     .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('GREEN')
-    .setFooter('Black Night System', 'https://cdn.discordapp.com/avatars/469862705273241630/5898dc71bb811771be4f9f58898fca95.jpg?size=128')
+    .setFooter('Dark System.', 'https://cdn.discordapp.com/attachments/479077727002034176/489159001372885003/22cc8b50393fb6eea6d85e6139136e78.jpeg')
 
 var channel =member.guild.channels.find('name', 'dark')
 if (!channel) return;
