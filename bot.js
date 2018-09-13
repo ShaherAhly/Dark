@@ -140,7 +140,7 @@ var prefix = "#";
     })
 
 client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "✸『MEMBER』✸")
+    const wc = member.guild.channels.find("name", "dark")
         const embed = new Discord.RichEmbed()
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
@@ -148,7 +148,7 @@ client.on("guildMemberAdd", function(member) {
 .setThumbnail(member.avatarURL)
   .setImage('https://pa1.narvii.com/6782/6a39e35882b236f29965c9070bad5ce51f1dd01f_hq.gif')
         .setTimestamp()
-        return wc.sendEmbed(embed);
+        return wc.send(embed);
         
 });
 
@@ -170,7 +170,7 @@ channel.send({embed : embed});
 });
 
 client.on('guildMemberAdd', (member) => {
-member.addRole(member.guild.roles.find('name', '✸『MEMBER』✸'));
+member.addRole(member.guild.roles.find('name', '- Dark. 🖤'));
 });
 
 
