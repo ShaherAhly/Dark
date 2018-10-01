@@ -83,32 +83,16 @@ client.on("message", async message => {
 
 
 
-        if(cmd === `${prefix}ban`){
+       client.on('message', message => {
+if (message.content.startsWith("ban")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
 
-
-
-          let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-          if(!bUser) return message.channel.send("فين العضو ؟");
-          let bReason = args.join(" ").slice(22);
-          if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما عندك برمشن");
-          if(bUser.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما تقدر تسوي كيك للأدمين")
-
-          let banEmbed = new Discord.RichEmbed()
-          .setDescription("~Ban~")
-          .setColor("#8e0505")
-          .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-          .addField("Banned By", `<@${message.author.id}> with the id ${message.author.id}`)
-          .addField("Banned In", message.channel)
-          .addField("Time", message.createdAt)
-          .addField("Reason", bReason);
-
-          let banChannel = message.guild.channels.find('name', 'kick-ban');
-          if(!banChannel) return message.channel.send("لازم يكون في روم اسمة kick-ban");
-
-          message.guild.member(bUser).ban(bReason)
-          banChannel.send(banEmbed);
-        }
-        });
+    mention.ban("By: " + message.author.tag);
+    
+    message.channel.send("تم أعطاء باند الى : " + mention.tag);
+};
+});
 
 client.on('message', message => {
 var prefix = "#";
