@@ -11,27 +11,28 @@ client.on('message', message => {
       }
 });
 
- client.on("message", message => {
-    var prefix = "#"; // غير هنا حط البرفكس
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
-        var msg;
-        msg = parseInt();
-      
-      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("", {embed: {
-        title: "Done | تــم",
-        color: 0x06DF00,
-        description: "تم مسح الرسائل بنجاح",
-        footer: {
-          text: "Mrzizx" // غير هنا حط اسم البوت
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
+ client.on('message', msg => {
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+  let command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = msg.content.split(" ").slice(1);
 
-     
+    if(command === "clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }    
+    }
+}
 });
 
 client.on("message", async message => {
@@ -45,32 +46,16 @@ client.on("message", async message => {
 
 
 
-    if(cmd === `${prefix}kick`){
+    client.on('message', message => {
+if (message.content.startsWith("kick")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
 
-
-
-      let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-      if(!kUser) return message.channel.send("فين العضو ؟");
-      let kReason = args.join(" ").slice(22);
-      if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما عندك برمشن");
-      if(kUser.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما تقدر تسوي كيك للأدمين")
-
-      let kickEmbed = new Discord.RichEmbed()
-      .setDescription("~Kick~")
-      .setColor("#e56b00")
-      .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-      .addField("Kicked By", `<@${message.author.id}> with the id ${message.author.id}`)
-      .addField("Kicked In", message.channel)
-      .addField("Time", message.createdAt)
-      .addField("Reason", kReason);
-
-      let kickChannel = message.guild.channels.find('name', 'kick-ban');
-      if(!kickChannel) return message.channel.send("Cannot find kick-ban channel.");
-
-      message.guild.member(kUser).kick(kReason)
-      kickChannel.send(kickEmbed);
-    }
-    });
+    mention.kick("By: " + message.author.tag);
+    
+    message.channel.send("تم أعطاء كيك الى : " + mention.tag);
+};
+});
 
 client.on("message", async message => {
       if(message.author.bot) return;
