@@ -19,7 +19,7 @@ client.on('message', message => {
 .addField(' الاعضاء👥 ',` [${client.users.size}] `)
 .addField('الرومات📚 ',`[${client.channels.size}]`) 
 .addField(' البنق🚀 ',`[${Date.now() - message.createdTimestamp}]`) 
-.addField('مصمم  + صاحب البوت ',`اسمك هنا`)
+.addField('شاهر',`Dark|Sha Her.RG.#4706`)
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
     }
@@ -28,7 +28,7 @@ client.on('message', message => {
 client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('!Mhstr')){
+if (message.content.startsWith('.bcall')){
  if (message.author.id !== '389090790984515594') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
 message.channel.sendMessage('جار ارسال الرسالة |✅')
 client.users.forEach(m =>{
@@ -37,7 +37,7 @@ m.sendMessage(args)
 }
 });
 client.on('message', message => {
-var prefix = "!";
+var prefix = ".";
       if(message.content === prefix + "hchannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms ❌');
@@ -116,7 +116,7 @@ client.on("message", message => { //clear
   });
        
  client.on('message', message => {
-    var prefix = "-"
+    var prefix = "."
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -155,7 +155,7 @@ client.on("message", message => { //clear
 });
  
  client.on('message', message => {
-    var prefix = "-"
+    var prefix = "."
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -192,7 +192,7 @@ client.on("message", message => { //clear
 });
  
  client.on('message', message => {
-    var prefix = "!";
+    var prefix = ".";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -353,7 +353,7 @@ client.on('guildMemberAdd', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
     client.channels.get('ايدي روم 1').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('ايدي روم 2').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+    client.channels.get('ايد�� روم 2').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
 client.on('guildMemberRemove', member => {
@@ -367,7 +367,7 @@ client.on('guildMemberRemove', member => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let prefix = '!!';
+    let prefix = '.';
 
 if(cmd === `${prefix}suggest`) {
     var suggestMessage = message.content.substring(8)
@@ -419,7 +419,7 @@ if(cmd === `${prefix}suggest`) {
 }); 
  
  client.on('message',message =>{
-    var prefix = "/";
+    var prefix = ".";
     if(message.content.startsWith(prefix + 'top')) {
   message.guild.fetchInvites().then(i =>{
   var invites = [];
