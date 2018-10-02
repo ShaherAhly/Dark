@@ -1241,10 +1241,5 @@ client.on("guildDelete", guild => {
     }
 });
 
-client.on("message", async () => {
-  
-})
-
-
 
 client.login(process.env.BOT_TOKEN);
