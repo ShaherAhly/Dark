@@ -115,7 +115,7 @@ client.on("message", message => { //clear
        
   });
        
- lient.on('message', message => {
+ client.on('message', message => {
     var prefix = "-"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
