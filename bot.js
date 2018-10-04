@@ -19,7 +19,7 @@ client.on('message', message => {
 .addField(' الاعضاء👥 ',` [${client.users.size}] `)
 .addField('الرومات📚 ',`[${client.channels.size}]`) 
 .addField(' البنق🚀 ',`[${Date.now() - message.createdTimestamp}]`) 
-.addField('شاهر',`Dark|Sha Her.RG.#4706`)
+.addField('ShaherAhly2005',`Dark|Sha Her.RG.#4706`)
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
     }
